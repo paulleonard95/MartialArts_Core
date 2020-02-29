@@ -35,6 +35,7 @@ namespace Martial.Web.Controllers
         }
 
         // GET: Member/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
