@@ -22,6 +22,18 @@
                 <input asp-for="Dob" class="form-control" />
                 <span asp-validation-for="Dob" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="Belt" class="control-label"></label>
+                <select asp-for="Belt" asp-items="Html.GetEnumSelectList<Belt>()" class="form-control">
+                    <option>Select Belt</option>
+                </select>
+                <span asp-validation-for="Belt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsuranceDue" class="control-label"></label>
+                <input asp-for="InsuranceDue" class="form-control" />
+                <span asp-validation-for="InsuranceDue" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="InsurancePaid" /> @Html.DisplayNameFor(model => model.InsurancePaid)

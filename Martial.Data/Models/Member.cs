@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Martial.Data.Models
 {
+    public enum Belt { White, Yellow, Green , Purple, Orange, Blue, Brown, Red, Black}
     public class Member
     {
         public int Id { get; set; }
@@ -15,6 +16,9 @@ namespace Martial.Data.Models
         [Display(Name = "Date Of Birth")]
         [DataType(DataType.Date)]
         public DateTime Dob { get; set; }
+
+        [Display(Name = "Belt Classification")]
+        public Belt Belt { get; set; }
 
         [Display(Name = "Date Insurance Due")]
         [DataType(DataType.Date)]

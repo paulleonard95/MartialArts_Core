@@ -13,9 +13,9 @@ namespace Martial.Data.Services
 
             service.Initialise();
 
-            var m1 = new Member { Name = "Joe Bloggs", Dob = DateTime.Now.Date, 
+            var m1 = new Member { Name = "Joe Bloggs", Dob = DateTime.Now.Date, Belt = Belt.White,
                                 InsuranceDue = DateTime.Parse("31/03/2020"), InsurancePaid = true };
-            var m2 = new Member { Name = "Mary Bloggs", Dob = new DateTime(DateTime.Now.Date.Year - 1, 1, 1), 
+            var m2 = new Member { Name = "Mary Bloggs", Dob = new DateTime(DateTime.Now.Date.Year - 1, 1, 1), Belt = Belt.Brown,
                                 InsuranceDue = DateTime.Parse("05/06/2020"), InsurancePaid = false };
             service.AddMember(m1);            
             service.AddBadgeToMember(m1.Id, new Badge { Title = "Blue", Awarded = DateTime.Now.Date });
@@ -23,6 +23,7 @@ namespace Martial.Data.Services
             service.AddMember(m2);
 
             service.RegisterUser(new User { Username = "admin", Password = "admin", Role = Role.Admin });
+            service.RegisterUser(new User { Username = "manager", Password = "manager", Role = Role.Manager });
             service.RegisterUser(new User { Username = "guest", Password = "guest", Role = Role.Guest });
 
         }
